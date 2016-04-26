@@ -1,0 +1,21 @@
+### Dependency directory ###
+node_modules
+
+
+### PSD tamplates ###
+PSD
+*.psd
+
+### Sass ###
+.sass-cache
+*.css.map
+
+### Bower ###
+bower_components
+app/libs
+.bower-cache
+.bower-registry
+.bower-tmp
+
+### Build result ###
+dist

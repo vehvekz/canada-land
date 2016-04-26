@@ -1,0 +1,21 @@
+{
+  "name": "start-web",
+  "version": "0.0.1",
+  "homepage": "https://github.com/vehvekz/start",
+  "authors": [
+    "Alexey Savkin <savkinshot@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.2.0",
+    "foundation-sites": "^6.1.2",
+    "Scut": "scut#^1.4.0"
+  }
+}
