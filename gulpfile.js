@@ -14,21 +14,21 @@ var gulp = require('gulp'),
 
 var isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
 
-const path = {
+var path = {
 	app: {
 		jade: 'app/pages/*.jade',
 		styles: 'app/styles/app.sass',
 		scripts: 'app/scripts/app.js',
-		assets: ['app/assets/**/*.*', '!app/assets/{svg,img}/**/*.*'],
+		assets: ['app/assets/**/*.*', '!app/assets/{img}/**/*.*'],
 		img: 'app/assets/img/**/*.*',
-		svg: 'app/assets/svg/**/*.svg',
+		// svg: 'app/assets/svg/**/*.svg',
 		php: 'app/**/*.php'
 	},
 	dist: { 
 		html: 'dist',
 		styles: 'dist/assets/css/',
 		scripts: 'dist/assets/scripts/',
-		assets: 'app/assets/',
+		assets: 'dist/assets/',
 		img: 'dist/assets/img',
 		php: 'dist'
 	},
@@ -36,9 +36,9 @@ const path = {
 		html: 'app/**/*.jade',
 		styles: 'app/**/*.{sass,scss}',
 		scripts: 'app/scripts/**/*.js',
-		assets: ['app/assets/**/*.*', '!app/assets/{svg,img}/*.*'],
+		assets: ['app/assets/**/*.*', '!app/assets/{img}/*.*'],
 		img: 'app/assets/img/**/*.*',
-		svg: 'app/assets/svg/**/*.svg',
+		// svg: 'app/assets/svg/**/*.svg',
 		php: 'app/**/*.php'
 	},
 	sass: [
@@ -65,7 +65,7 @@ gulp.task('html', function () {
 		errorHandler: $.notify.onError()
 	}))
 	.pipe($.jade({
-			brace_style: 'expand',
+			pretty: true,
 			indent_size: 2,
 			indent_inner_html: true,
 			preserve_newlines: true,
@@ -110,8 +110,7 @@ gulp.task('scripts', function () {
 });
 
 gulp.task('assets', function(){
-	gulp.src(path.app.assets)
-		.pipe($.newer(path.dist.assets))
+	return gulp.src(path.app.assets)
 		.pipe($.debug({title: 'assets'}))
 		.pipe(gulp.dest(path.dist.assets))
 		.pipe(reload({stream: true}));
@@ -178,7 +177,7 @@ gulp.task('dev', [
 	'scripts',
 	'assets',
 	'image',
-	'svg',
+	// 'svg',
 	'styles'
 ]);
 
@@ -199,9 +198,9 @@ gulp.task('watch', function () {
 	$.watch(path.watch.img, $.batch(function (events, done) {
 		gulp.start('image', done);
 	}));
-	$.watch(path.watch.svg, $.batch(function (events, done) {
-		gulp.start('svg', done);
-	}));
+	// $.watch(path.watch.svg, $.batch(function (events, done) {
+	// 	gulp.start('svg', done);
+	// }));
 	$.watch(path.watch.php, $.batch(function (events, done) {
 		gulp.start('php', done);
 	}));

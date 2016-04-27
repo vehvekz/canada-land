@@ -1,13 +1,13 @@
+/********** Main Styles **********/
 
 .wrapper
 	position: relative
 	overflow: hidden
 	min-width: 320px
-	width: 1920px
+	max-width: $large
 	margin: auto
 	color: $main
-	font-size: 14px
-	font-family: 'Open Sans Bold', sans-serif
+	font-family: 'OpenSans', sans-serif
 
 svg
 	font-size: 3rem
@@ -16,7 +16,7 @@ svg
 	fill: inherit
 	stroke: inherit
 
-a, a:hover, a:focus, a:visited
+a, a:hover, a:focus, a:visited, input[type=submit], button
 	text-decoration: none
 	color: $main
 	transition: all 0.3s

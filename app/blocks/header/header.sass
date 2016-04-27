@@ -1,5 +1,220 @@
 /********** Header **********/
 .header
+	position: relative
+	background: url(../img/header-sity.jpg) no-repeat top center
+	height: 785px
+	padding: scut-em(58 0 140 0)
+	+media-below(790px)
+		height: auto
+		padding: scut-em(40 0 50 0)
+		background-size: cover
+	+media-below(480px)
+		padding: scut-em(20 0 30 0)
+	&:before
+		content: ''
+		position: absolute
+		bottom: -12px
+		left: 50%
+		width: 374px
+		height: 445px
+		margin-left: -196px
+		background: url(../img/header-people.png) no-repeat center
+		+media-below(1150px)
+			display: none
+
+	&_topline
+		margin-bottom: scut-em(45)
+		position: relative
+		text-align: center
+		+media-below(480px)
+			text-align: left
+			margin-bottom: scut-em(25)
+		+media-below(420px)
+			margin-bottom: scut-em(15)
+
+	&_logo
+		display: inline-block
+		svg
+			font-size: 13rem
+			height: 0.5em
+			width: auto
+			+media-below(590px)
+				font-size: 10rem
+
+	&_lang--wrap
+		position: absolute
+		right: 0
+		top: 0
+		bottom: 0
+		&:before
+			content: ''
+			display: inline-block
+			vertical-align: middle
+			height: 100%
+		.lang
+			display: inline-block
+			vertical-align: middle
+			padding-top: 5px
+			&:first-child
+				padding-top: 0
+			svg
+				vertical-align: middle
+				font-size: 1.3rem
+				border-radius: 50%
+			span
+				vertical-align: middle
+				padding-left: 8px
+				font-size: scut-rem(12)
+				letter-spacing: -0.5px
+
+	&_content
+		text-align: justify
+		font-size: 0
+		&:after
+			content: ''
+			display: inline-block
+			width: 100%
+
+	&_info,
+	&_form
+		display: inline-block
+		vertical-align: top
+		width: 36%
+		font-size: 1rem
+		+media-below(1150px)
+			width: 46%
+		+media-below(790px)
+			display: block
+			width: 80%
+			margin: auto
+		+media-below(590px)
+			width: 100%
+
+	&_info
+		text-align: left
+		padding-left: 40px
+		+media-below(1150px)
+			padding-left: 0
+		+media-below(960px)
+			font-size: 0.9rem
+		+media-below(790px)
+			text-align: center
+			padding-bottom: scut-em(50px)
+			font-size: 0.8rem
+		h1
+			font-family: $font-osb
+			font-size: scut-em(54)
+			line-height: scut-em(16)
+			color: $red
+			span
+				font-family: $font-sp
+				font-size: scut-em(12)
+				color: $blue
+		p
+			padding: scut-em(24 0 42 0)
+			font-size: scut-em(22)
+			line-height: scut-em(19)
+			letter-spacing: -1px
+			+media-below(480px)
+				// padding: scut-em(15 0 25 0)
+		a
+			display: inline-block
+			width: 153px
+			height: 47px
+			text-align: center
+			line-height: 46px
+			font-size: 1rem
+			+media-below(480px)
+				width: 142px
+			&.services_link
+				margin-right: scut-em(30)
+				background-color: $blue
+				color: $white
+				&:hover
+					background-color: $white
+					color: $blue
+					box-shadow: inset 0 0 0 3px $blue
+				+media-below(590px)
+					margin-right: scut-em(10)
+			&.about_link
+				background-color: $white
+				box-shadow: inset 0 0 0 3px $blue
+				color: $blue
+				&:hover
+					background-color: $blue
+					color: $white
+					box-shadow: none
+
+	&_form
+		position: relative
+		margin-top: 53px
+		+media-below(960px)
+			margin-top: 0
+		&:before
+			content: ''
+			position: absolute
+			top: -4px
+			left: -298px
+			width: 421px
+			height: 555px
+			background: url(../img/small-flag.png) no-repeat center
+			+media-below(1150px)
+				display: none
+		&--spot
+			position: absolute
+			top: -126px
+			left: -122px
+			width: 461px
+			height: 620px
+			background: url(../img/header-spot.png) no-repeat center
+			+media-below(590px)
+				display: none
+		form
+			position: relative
+			z-index: 2
+			padding: scut-em(20 34 14)
+			text-align: center
+			background-color: rgba(255,255,255,.5)
+			border-radius: 3px
+			+media-below(480px)
+				padding: scut-em(15 10 10)
+		h3
+			font-family: $font-osb
+			font-size: scut-em(18px)
+			line-height: scut-em(25px)
+			color: $blue
+		h4
+			font-family: $font-sp
+			font-size: scut-em(18px)
+			color: $red
+			padding-bottom: scut-em(15)
+		span
+			display: block
+			margin-bottom: scut-em(8)
+		input
+			width: 100%
+			padding: scut-em(11 25)
+			color: $grey
+			border: 2px solid $lightBlue
+		input[type=submit]
+			width: 146px
+			height: 50px
+			padding: 0
+			margin-top: scut-em(3px)
+			font-size: scut-rem(22)
+			text-transform: capitalize
+			line-height: 48px
+			color: $white
+			border: none
+			background-color: $blue
+			&:hover
+				background-color: $red
+
+
+
+
+
+
 
 
 

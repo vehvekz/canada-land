@@ -2,9 +2,11 @@
 node_modules
 
 
-### PSD tamplates ###
+### PSD and JPG tamplates ###
 PSD
 *.psd
+*.jpg
+*.jpeg
 
 ### Sass ###
 .sass-cache

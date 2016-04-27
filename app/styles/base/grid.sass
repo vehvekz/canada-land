@@ -1,12 +1,12 @@
-// +foundation-global-styles
-// +foundation-grid
+/********** Grid Styles **********/
 
 .container
-	+grid-row
-.row
-	+grid-row(12)
-.block
-	+grid-column(6, 15px)
+	max-width: $medium
+	margin: auto
+	+media-below(1150px)
+		padding: scut-em(0 20px)
+	+media-below(380px)
+		padding: scut-em(0 10px)
 
 
 
