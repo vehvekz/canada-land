@@ -19,9 +19,9 @@ var path = {
 		jade: 'app/pages/*.jade',
 		styles: 'app/styles/app.sass',
 		scripts: 'app/scripts/app.js',
-		assets: ['app/assets/**/*.*', '!app/assets/{img}/**/*.*'],
+		assets: ['app/assets/**/*.*', '!app/assets/{img}/*.*'],
 		img: 'app/assets/img/**/*.*',
-		// svg: 'app/assets/svg/**/*.svg',
+		// icons: 'app/assets/svg/icons/*.svg',
 		php: 'app/**/*.php'
 	},
 	dist: { 
@@ -30,6 +30,7 @@ var path = {
 		scripts: 'dist/assets/scripts/',
 		assets: 'dist/assets/',
 		img: 'dist/assets/img',
+		// icons: 'dist/assets/svg/',
 		php: 'dist'
 	},
 	watch: { 
@@ -38,7 +39,7 @@ var path = {
 		scripts: 'app/scripts/**/*.js',
 		assets: ['app/assets/**/*.*', '!app/assets/{img}/*.*'],
 		img: 'app/assets/img/**/*.*',
-		// svg: 'app/assets/svg/**/*.svg',
+		// icons: 'app/assets/svg/icons/*.svg',
 		php: 'app/**/*.php'
 	},
 	sass: [
@@ -131,8 +132,8 @@ gulp.task('image', function () {
 		.pipe(reload({stream: true}));
 });
 
-gulp.task('svg', function(){
-	gulp.src(path.app.svg)
+gulp.task('icons', function(){
+	gulp.src(path.app.icons)
 		.pipe($.plumber({
 			errorHandler: $.notify.onError()
 			}))
@@ -141,13 +142,13 @@ gulp.task('svg', function(){
 				pretty: true
 			}
 		}))
-		.pipe($.cheerio({
-			run: function ($){
-				$('[fill]').removeAttr('fill');
-				$('[style]').removeAttr('style');
-			},
-			parserOptions: { xmlMode: true }
-		}))
+		// .pipe($.cheerio({
+		// 	run: function ($){
+		// 		$('[fill]').removeAttr('fill');
+		// 		$('[style]').removeAttr('style');
+		// 	},
+		// 	parserOptions: { xmlMode: true }
+		// }))
 		.pipe($.svgSymbols({
 			id: 'i-%f',
 			className: 'i-%f',
@@ -156,7 +157,7 @@ gulp.task('svg', function(){
 			]
 		}))
 		.pipe($.rename('sprite.svg'))
-		.pipe(gulp.dest(path.dist.img))
+		.pipe(gulp.dest(path.dist.icons))
 		.pipe(reload({stream: true}));
 });
 
@@ -177,7 +178,7 @@ gulp.task('dev', [
 	'scripts',
 	'assets',
 	'image',
-	// 'svg',
+	// 'icons',
 	'styles'
 ]);
 
@@ -198,8 +199,8 @@ gulp.task('watch', function () {
 	$.watch(path.watch.img, $.batch(function (events, done) {
 		gulp.start('image', done);
 	}));
-	// $.watch(path.watch.svg, $.batch(function (events, done) {
-	// 	gulp.start('svg', done);
+	// $.watch(path.watch.icons, $.batch(function (events, done) {
+	// 	gulp.start('icons', done);
 	// }));
 	$.watch(path.watch.php, $.batch(function (events, done) {
 		gulp.start('php', done);

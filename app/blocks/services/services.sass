@@ -1,0 +1,57 @@
+/********** Services section **********/
+.services
+	position: relative
+	height: 785px
+	padding: scut-em(78 0 14 0)
+	background: #fefefe url(../img/services-bg-full.jpg) no-repeat bottom center
+	text-align: right
+	+media-below(990px)
+		height: auto
+		padding: scut-em(60 0 30 0)
+		background-size: cover
+	+media-below(900px)
+		background-position: bottom right
+		background-size: auto
+	+media-below(480px)
+		padding: scut-em(40 0 20 0)
+
+	ul
+		display: inline-block
+		width: 575px
+		padding-top: scut-em(15px)
+		+media-below(990px)
+			width: 520px
+		+media-below(900px)
+			display: block
+			width: 90%
+			margin: auto
+		+media-below(540px)
+			width: 100%
+			font-size: 0.9rem
+		li
+			position: relative
+			text-align: left
+			padding: scut-em(0 0 26px 45px)
+			h4 
+				padding-bottom: scut-em(10px)
+				font-size: scut-em(20px)
+				font-family: $font-osb
+				color: $blue
+			p
+				font-size: scut-rem(14px)
+				line-height: scut-em(27px)
+			img
+				+scut-absolute(-8px n n 4px)
+				width: 1.8em
+				+media-below(540px)
+					top: -6px
+				&.icon-course
+					width: 2.3rem
+					left: 0px
+				&.icon-security
+					width: 1.5rem
+					left: 9px
+
+
+
+

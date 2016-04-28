@@ -1,6 +1,7 @@
 /********** Header **********/
 .header
 	position: relative
+	overflow: hidden
 	background: url(../img/header-sity.jpg) no-repeat top center
 	height: 785px
 	padding: scut-em(58 0 140 0)
@@ -13,7 +14,7 @@
 	&:before
 		content: ''
 		position: absolute
-		bottom: -12px
+		bottom: -2px
 		left: 50%
 		width: 374px
 		height: 445px
@@ -34,12 +35,14 @@
 
 	&_logo
 		display: inline-block
-		svg
+		img
 			font-size: 13rem
 			height: 0.5em
 			width: auto
 			+media-below(590px)
 				font-size: 10rem
+			+media-below(420px)
+				font-size: 8rem
 
 	&_lang--wrap
 		position: absolute
@@ -57,9 +60,9 @@
 			padding-top: 5px
 			&:first-child
 				padding-top: 0
-			svg
+			img
 				vertical-align: middle
-				font-size: 1.3rem
+				width: 1.3rem
 				border-radius: 50%
 			span
 				vertical-align: middle

@@ -21,6 +21,39 @@ a, a:hover, a:focus, a:visited, input[type=submit], button
 	color: $main
 	transition: all 0.3s
 
+.section-title
+	text-align: center
+	padding-bottom: scut-em(80)
+	+media-below(900px)
+		padding-bottom: scut-em(50)
+	+media-below(690px)
+		font-size: 0.9rem
+	+media-below(480px)
+		font-size: 0.8rem
+	&:before
+		content: ''
+		display: inline-block
+		vertical-align: middle
+		height: 100%
+	h2
+		display: inline-block
+		vertical-align: middle
+		font-family: $font-osl
+		font-size: scut-em(41)
+	svg
+		display: inline-block
+		vertical-align: middle
+		margin-right: scut-rem(6)
+		font-size: 2.4em
+		fill: $blue
+	&--white
+		h2
+			color: $white
+		svg
+			fill: $white
+
+
+
 
 
 
