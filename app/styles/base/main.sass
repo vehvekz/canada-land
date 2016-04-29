@@ -21,11 +21,19 @@ a, a:hover, a:focus, a:visited, input[type=submit], button
 	color: $main
 	transition: all 0.3s
 
+.container
+	max-width: $medium
+	margin: auto
+	+media-below(1150px)
+		padding: scut-em(0 20px)
+	+media-below(380px)
+		padding: scut-em(0 10px)
+
 .section-title
 	text-align: center
-	padding-bottom: scut-em(80)
+	margin-bottom: scut-em(60)
 	+media-below(900px)
-		padding-bottom: scut-em(50)
+		margin-bottom: scut-em(50)
 	+media-below(690px)
 		font-size: 0.9rem
 	+media-below(480px)
@@ -40,6 +48,7 @@ a, a:hover, a:focus, a:visited, input[type=submit], button
 		vertical-align: middle
 		font-family: $font-osl
 		font-size: scut-em(41)
+		color: $black1
 	svg
 		display: inline-block
 		vertical-align: middle

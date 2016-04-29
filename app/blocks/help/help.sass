@@ -1,0 +1,97 @@
+/********** Help section **********/
+
+.help
+	position: relative
+	overflow: hidden
+	padding: scut-em(60 0 60 0)
+	background: url(../img/help-bg.jpg) no-repeat center
+	background-size: cover
+	text-align: right
+
+	&_content
+		position: relative
+		display: inline-block
+		width: 573px
+		+media-below(1000px)
+			display: block
+			margin: auto
+			width: 80%
+		+media-below(540px)
+			width: 100%
+
+		&:before
+			content: ''
+			+scut-absolute(n n -60px -574px)
+			width: 564px
+			height: 721px
+			background: url(../img/help-people.png) no-repeat center
+			+media-below(1000px)
+				display: none
+
+		&--discr
+			padding-bottom: scut-rem(34px)
+			text-align: left
+			font-family: $font-osl
+			font-size: scut-rem(14px)
+			line-height: scut-rem(24px)
+			color: $black3
+			a
+				font-family: $font-os
+				color: $blue
+				&:hover
+					text-decoration: underline
+
+		form
+			padding: scut-em(18 35)
+			text-align: center
+			font-size: scut-em(18px)
+			background-color: rgba(0, 146, 200, 0.6)
+			color: $white
+			border-radius: 5px
+			+media-below(480px)
+				padding: scut-em(15)
+			+media-below(380px)
+				padding: scut-em(15 10)
+			h3
+				font-family: $font-osb
+				line-height: scut-em(25px)
+			h4
+				font-family: $font-sp
+				padding-bottom: scut-em(15)
+			span
+				position: relative
+				display: block
+				margin-bottom: scut-em(5)
+			input
+				width: 100%
+				padding: scut-em(11 10 11 25)
+				color: $grey
+				border: 1px solid $lightBlue
+				+media-below(640px)
+					padding: scut-em(11 10 11 15)
+				+media-below(480px)
+					padding: scut-em(10)
+				&:focus
+					box-shadow: -3px 3px $red
+			input[type=submit]
+				display: inline-block
+				width: 146px
+				height: 50px
+				padding: 0
+				margin-top: scut-em(7px)
+				font-size: scut-rem(22)
+				text-transform: capitalize
+				line-height: 48px
+				border: none
+				background-color: $blue
+				color: $white
+				&:hover, &:focus
+					box-shadow: none
+					background-color: $red
+
+
+
+
+
+
+

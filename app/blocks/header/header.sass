@@ -5,6 +5,7 @@
 	background: url(../img/header-sity.jpg) no-repeat top center
 	height: 785px
 	padding: scut-em(58 0 140 0)
+	margin-bottom: 5px
 	+media-below(790px)
 		height: auto
 		padding: scut-em(40 0 50 0)
@@ -13,9 +14,8 @@
 		padding: scut-em(20 0 30 0)
 	&:before
 		content: ''
-		position: absolute
-		bottom: -2px
-		left: 50%
+		z-index: 2
+		+scut-absolute(n n -2px 50%)
 		width: 374px
 		height: 445px
 		margin-left: -196px
@@ -45,10 +45,7 @@
 				font-size: 8rem
 
 	&_lang--wrap
-		position: absolute
-		right: 0
-		top: 0
-		bottom: 0
+		+scut-absolute(0 0 0 n)
 		&:before
 			content: ''
 			display: inline-block
@@ -69,6 +66,11 @@
 				padding-left: 8px
 				font-size: scut-rem(12)
 				letter-spacing: -0.5px
+				color: $black1
+			&:hover
+				span
+					text-decoration: underline
+
 
 	&_content
 		text-align: justify
@@ -109,6 +111,7 @@
 			font-size: scut-em(54)
 			line-height: scut-em(16)
 			color: $red
+			text-shadow: 0 0 2px rgba(255,255,255,.6)
 			span
 				font-family: $font-sp
 				font-size: scut-em(12)
@@ -118,8 +121,7 @@
 			font-size: scut-em(22)
 			line-height: scut-em(19)
 			letter-spacing: -1px
-			+media-below(480px)
-				// padding: scut-em(15 0 25 0)
+			color: $black2
 		a
 			display: inline-block
 			width: 153px
@@ -151,22 +153,18 @@
 	&_form
 		position: relative
 		margin-top: 53px
-		+media-below(960px)
+		+media-below(1150px)
 			margin-top: 0
 		&:before
 			content: ''
-			position: absolute
-			top: -4px
-			left: -298px
+			+scut-absolute(-4px n n -298px)
 			width: 421px
 			height: 555px
 			background: url(../img/small-flag.png) no-repeat center
 			+media-below(1150px)
 				display: none
 		&--spot
-			position: absolute
-			top: -126px
-			left: -122px
+			+scut-absolute(-126px n n -122px)
 			width: 461px
 			height: 620px
 			background: url(../img/header-spot.png) no-repeat center
@@ -176,6 +174,7 @@
 			position: relative
 			z-index: 2
 			padding: scut-em(20 34 14)
+			font-size: scut-em(18px)
 			text-align: center
 			background-color: rgba(255,255,255,.5)
 			border-radius: 3px
@@ -183,15 +182,14 @@
 				padding: scut-em(15 10 10)
 		h3
 			font-family: $font-osb
-			font-size: scut-em(18px)
 			line-height: scut-em(25px)
 			color: $blue
 		h4
 			font-family: $font-sp
-			font-size: scut-em(18px)
 			color: $red
 			padding-bottom: scut-em(15)
 		span
+			position: relative
 			display: block
 			margin-bottom: scut-em(8)
 		input
@@ -210,10 +208,8 @@
 			color: $white
 			border: none
 			background-color: $blue
-			&:hover
+			&:hover, &:focus
 				background-color: $red
-
-
 
 
 
